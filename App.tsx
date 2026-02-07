@@ -7,6 +7,7 @@ import { STYLES, StyleSelector } from './components/StyleSelector';
 import { ImageUpload } from './components/ImageUpload';
 import { Button } from './components/Button';
 import { Download, Camera, Sparkles, Wand2, X } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App: React.FC = () => {
   // --- STATE ---
@@ -469,6 +470,7 @@ const App: React.FC = () => {
         )}
 
       </main>
+      <SpeedInsights />
     </div>
   );
 };
