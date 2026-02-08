@@ -10,7 +10,7 @@ export const generateStyledImage = async (
   additionalNotes: string,
   aspectRatio: AspectRatio = "1:1"
 ): Promise<GeneratedImage> => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = import.meta.env.VITE_API_KEY;
   if (!apiKey) {
     throw new Error("API Key is missing. Please ensure process.env.API_KEY is available.");
   }
