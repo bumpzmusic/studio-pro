@@ -1,8 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 import { GeneratedImage, AspectRatio } from "../types";
 
-// CERTO (Use o modelo experimental 2.0 que gera imagens ou o Imagen)
-const GEMINI_MODEL = "gemini-2.0-flash-exp";
+// Tente este primeiro (Versão mais atual do 2.0):
+const GEMINI_MODEL = "gemini-2.0-flash";
 
 export const generateStyledImage = async (
   base64Image: string,
