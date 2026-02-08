@@ -11,9 +11,13 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
+        // AQUI ESTÁ O TRUQUE:
+        // Quando o app pedir "process.env.API_KEY", entregue o que está no "VITE_API_KEY"
+        'process.env.API_KEY': JSON.stringify(env.VITE_API_KEY),
+        
+        // Mantemos esse também por segurança, apontando para o mesmo lugar
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.VITE_API_KEY)
+    },
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
