@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 import { GeneratedImage, AspectRatio } from "../types";
 
-const GEMINI_MODEL = "gemini-2.5-flash-image";
+// CERTO (Use o modelo experimental 2.0 que gera imagens ou o Imagen)
+const GEMINI_MODEL = "gemini-2.0-flash-exp";
 
 export const generateStyledImage = async (
   base64Image: string,
@@ -12,7 +13,7 @@ export const generateStyledImage = async (
 ): Promise<GeneratedImage> => {
   const apiKey = import.meta.env.VITE_API_KEY;
   if (!apiKey) {
-    throw new Error("API Key is missing. Please ensure process.env.API_KEY is available.");
+    throw new Error("API Key is missing. Ensure VITE_API_KEY is set.");
   }
 
   const ai = new GoogleGenAI({ apiKey });
